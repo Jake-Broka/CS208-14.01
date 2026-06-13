@@ -1,0 +1,8 @@
+extends layout 
+
+block content
+    ol
+    each val in menu
+        li 
+            a(href=`/menu/${val.item}`)= val.item
+            span=' - ' + val.price_sm

@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+    ol
+        each val in reviews 
+            li
+                span=val.review + ' - ' + val.timestamp 
+
+    br
+    hr
+    h2 Leave a Review!
+    form(method='POST' action='/reviews/send')
+        input(type='text', name ='review', id='review', required)
+        button(type='submit') Create Review
