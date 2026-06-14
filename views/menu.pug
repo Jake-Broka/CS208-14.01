@@ -2,7 +2,7 @@ extends layout
 
 block content
     ol
-    each val in menu
+    each item in menu
         li 
-            a(href=`/menu/${val.item}`)= val.item
-            span=' - ' + val.price_sm
+            a(href=`/menu/${item.item}`)= item.item
+            span=' - ' + item.price_sm

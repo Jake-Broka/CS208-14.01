@@ -41,7 +41,7 @@ router.get('/menu/:item', function(req, res, next){
 
 /*GET about page */
 router.get('/about', function(req, res, next){
-  res.render('index', {title: 'About Us'});
+  res.render('about');
 });
 
 /*GET reviews page */

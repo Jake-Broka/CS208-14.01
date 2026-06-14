@@ -3,14 +3,22 @@ html
   head
     title Downtown Donuts
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href='/images/logoLight.png' type='/image/png' rel='icon')
   body
     div.top
-    h1.italianno-regular EVENTUAL LOGO
-    a(href='/') Home 
-    a(href='/menu') Menu 
-    a(href='/about') About Us 
-    a(href='/reviews') Leave a Review 
+      h1.italianno-regular
+        img(src='/images/logoDark.png' alt='Downtown Donuts logo in gold' width='150px')
+      a(href='/') Home 
+      a(href='/menu') Menu 
+      a(href='/about') About Us 
+      a(href='/reviews') Leave a Review 
+    hr.saffron
 
     block content
 
-  footer 
+  br
+  br
+
+  footer
+    hr.saffron
+    p (footer) stuff for doordash and ubereats
