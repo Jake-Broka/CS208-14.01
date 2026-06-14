@@ -1,11 +1,16 @@
 extends layout 
 
 block content 
+
+    - const numArrays = Math.ceil(reviews.length / 10)
+    - var i = 0
+    h1='numArrays: ' + numArrays
+
+    
     ol
         each val in reviews 
             li
-                span=val.review + ' - ' + val.timestamp 
-
+                span=val.review + ' - ' + val.timestamp.toLocaleDateString() + ' ' + val.timestamp.toLocaleTimeString() + ' UTC'
     br
     hr
     h2 Leave a Review!

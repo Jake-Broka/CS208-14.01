@@ -9,6 +9,7 @@ body {
   margin:0px;
   padding:0px;
   box-sizing:border-box;
+  overflow-x: hidden;
 }
 
 .top{
@@ -37,7 +38,7 @@ body {
   margin-top:0px;
   padding-top:0px;
 }
-.top * {
+.top > * {
     font-family: "Montserrat" ;
     color:#f7f7f7;
     text-decoration: none;
@@ -71,6 +72,8 @@ body {
   display:flex;
   align-items:flex-end;
   gap:10px;
+  margin-right:50px;
+  margin-left:50px;
 }
 
 .item-name{
@@ -93,7 +96,8 @@ body {
 .description{
   padding-top:5px;
   padding-bottom:5px;
-  list-style-type: circle;
+  font-size:0.9rem;
+  margin-left:50px
 }
 
 .subtext{
@@ -141,4 +145,88 @@ a:hover{
 
   margin:0px;
   padding:0px;
+}
+
+.schedule{
+  max-width: 450px;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding-top:20px
+}
+
+.schedule-item{
+  display:flex;
+  align-items: flex-end;
+  gap:10px
+}
+
+.date{
+  flex-basis:130px;
+}
+
+.time, .date {
+  white-space: nowrap;
+}
+
+.bottom{
+  display: flex;
+  flex-direction: row;
+  gap:40px;
+  justify-content: space-between;
+  align-items: center;
+  margin-left:50px;
+  margin-right:50px;
+}
+
+@media only screen and (max-width:800px){
+
+    .item-block {
+      margin-right: 0;
+      margin-left:0;
+    }
+
+    .description{
+      margin:0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .top {
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;         
+        gap: 15px;              
+        padding: 20px 0;        
+    }
+
+    .top > * { 
+        flex-basis: auto;
+        flex-grow: 0;
+        text-align: center;
+    }
+
+    .schedule{
+      max-width:100%;
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    .date{
+      min-width: 85px;
+    }
+
+    .bottom{
+      flex-direction: column;
+      align-items:center;
+      gap:30px;
+      padding-bottom:30px;
+      margin:0;
+    }
 }

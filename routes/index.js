@@ -31,7 +31,11 @@ router.get('/menu/:item', function(req, res, next){
       console.error('Error fetching item:', err);
       return res.status(500).send('Error fetching item');
     }
-    res.render('item', {title: results[0].item, details: results[0]});
+    if(results.length > 0){
+      res.render('item', {title: results[0].item, details: results[0]});
+    } else {
+      res.render('error')
+    }
     })
   } catch (error) {
     console.error('Error fetching menu:', error);
