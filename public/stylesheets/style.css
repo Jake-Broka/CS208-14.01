@@ -33,6 +33,9 @@ body {
 
   margin-bottom:0px;
   padding-bottom:0px;
+
+  margin-top:0px;
+  padding-top:0px;
 }
 .top * {
     font-family: "Montserrat" ;
@@ -64,6 +67,45 @@ body {
   text-align:left;
 }
 
+.item-block{
+  display:flex;
+  align-items:flex-end;
+  gap:10px;
+}
+
+.item-name{
+  font-weight:bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dashes{
+  flex-grow: 1;
+  border-bottom: 2px dotted;
+  position:relative;
+  bottom:8px;
+}
+
+.price {
+  font-weight:bold;
+}
+
+.description{
+  padding-top:5px;
+  padding-bottom:5px;
+  list-style-type: circle;
+}
+
+.subtext{
+  text-align: center;
+  margin:0px;
+  padding:0px;
+}
+
+.menuCategory{
+  text-align:center;
+}
+
 #center-with-img{
   display:flex;
   flex-direction:row;
@@ -84,6 +126,12 @@ a:hover{
   text-decoration: underline;
 }
 
+.no-bullet{
+  list-style-type:none;
+  padding:0px; 
+  margin:0px;
+}
+
 .saffron {
   color:#f7c64a;
   background-color:#f7c64a;
@@ -91,5 +139,6 @@ a:hover{
   border:none;
   height:2px;
 
-  margin:0px
+  margin:0px;
+  padding:0px;
 }

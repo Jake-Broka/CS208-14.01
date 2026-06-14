@@ -1,8 +1,62 @@
 extends layout 
 
 block content
-    ol
-    each item in menu
-        li 
-            a(href=`/menu/${item.item}`)= item.item
-            span=' - ' + item.price_sm
+    h1.fancy(style='padding-top:10px') Downtown Donuts 
+    h3.subtext(style='padding-bottom:10px') Family-Owned Since 1992
+
+    hr
+
+    h1.menuCategory SIGNATURE DONUTS
+    p.subtext Handcrafted fresh every morning
+
+    div
+        ul
+            each item in menu.filter(item => item.type === 'donut')
+                li.no-bullet
+                    .item-block
+                        a(href=`/menu/${item.item}` target='_blank').item-name= item.item
+                        span.dashes
+                        span.price= item.price_sm
+                    ul 
+                        li.description= item.description
+
+    hr
+    h1.menuCategory DRINKS & MORE
+    br
+
+    h2.menuCategory COFFEE
+    p.subtext Locally roasted beans • Always fresh
+     div
+        ul
+            each item in menu.filter(item => item.type === 'coffee')
+                li.no-bullet
+                    .item-block
+                        a(href=`/menu/${item.item}` target='_blank').item-name= item.item
+                        span.dashes
+                        span.price= item.price_sm
+                    ul 
+                        li.description= item.description
+
+    h2.menuCategory OTHER DRINKS
+    div
+        ul
+            each item in menu.filter(item => item.type === 'donut')
+                li.no-bullet
+                    .item-block
+                        a(href=`/menu/${item.item}` target='_blank').item-name= item.item
+                        span.dashes
+                        span.price= item.price_sm
+                    ul 
+                        li.description= item.description
+
+    h2.menuCategory BREAKFAST BITES
+    div
+        ul
+            each item in menu.filter(item => item.type === 'donut')
+                li.no-bullet
+                    .item-block
+                        a(href=`/menu/${item.item}` target='_blank').item-name= item.item
+                        span.dashes
+                        span.price= item.price_sm
+                    ul 
+                        li.description= item.description
