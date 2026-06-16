@@ -32,9 +32,9 @@ router.get('/menu/:item', function(req, res, next){
       return res.status(500).send('Error fetching item');
     }
     if(results.length > 0){
-      res.render('item', {title: results[0].item, details: results[0]});
+      res.render('item', {title: results[0].item, details: results[0].description});
     } else {
-      res.render('error')
+      res.status(404).render('error');
     }
     })
   } catch (error) {
@@ -118,6 +118,7 @@ router.post('/reviews/send', function (req, res, next) {
       }
     } else {
       console.log("Blank edit input!");
+      res.redirect('/reviews');
     }
 });
 

@@ -22,6 +22,21 @@ body {
   margin-bottom: 0px;
 }
 
+.top nav {
+    display: flex;
+    gap: 40px;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.top nav a {
+    font-family: "Montserrat";
+    color: #f7f7f7;
+    text-decoration: none;
+    flex-basis: 200px;
+    flex-grow: 1;
+}
+
 .fancy {
   font-family:"italianno";
   font-weight: 400;
@@ -37,13 +52,6 @@ body {
 
   margin-top:0px;
   padding-top:0px;
-}
-.top > * {
-    font-family: "Montserrat" ;
-    color:#f7f7f7;
-    text-decoration: none;
-    flex-basis:200px;
-    flex-grow:1;
 }
 
 .bg-white {
@@ -181,6 +189,18 @@ a:hover{
   padding:0px;
   margin-left:50px;
   margin-right:50px;
+}
+
+.bottom nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.bottom nav a {
+    color: #f7f7f7;
+    text-decoration: none;
+    font-family: "Montserrat";
 }
 
 .review-list{

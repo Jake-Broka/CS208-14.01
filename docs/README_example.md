@@ -1,8 +1,8 @@
 # CS208 Full Stack Final Project - Donut Shop Application
 
-- Name: John Doe
+- Name: Jake broka
 - GitHub: [https://github.com/johndoe](https://github.com/johndoe)
-- Term: Spring 2026
+- Term: Summer 2026
 
 ## Project Description
 

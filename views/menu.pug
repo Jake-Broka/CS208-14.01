@@ -33,14 +33,19 @@ block content
                     .item-block
                         a(href=`/menu/${item.item}` target='_blank').item-name= item.item
                         span.dashes
-                        span.price= item.price_sm
+                        div.price
+                            span='Sm: $' + item.price_sm
+                            if item.price_md 
+                                span=' Md: $' + item.price_md
+                            if item.price_lg 
+                                span=' Lg: $' + item.price_lg
                     ul 
                         p.description= item.description
 
     h2.menuCategory OTHER DRINKS
     div
         ul.no-bullet
-            each item in menu.filter(item => item.type === 'donut')
+            each item in menu.filter(item => item.type === 'drink')
                 li
                     .item-block
                         a(href=`/menu/${item.item}` target='_blank').item-name= item.item
@@ -52,7 +57,7 @@ block content
     h2.menuCategory BREAKFAST BITES
     div
         ul.no-bullet
-            each item in menu.filter(item => item.type === 'donut')
+            each item in menu.filter(item => item.type === 'breakfast')
                 li
                     .item-block
                         a(href=`/menu/${item.item}` target='_blank').item-name= item.item

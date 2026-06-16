@@ -25,5 +25,6 @@ block content
     div.review-form
         h2 Leave a Review!
         form(method='POST' action='/reviews/send')
+            label(for='review' style='display:block; margin-bottom:10px') Write your review: 
             input(type='text', name ='review', id='review', required)
             button(type='submit') Create Review
