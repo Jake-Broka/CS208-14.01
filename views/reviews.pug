@@ -1,19 +1,29 @@
 extends layout 
 
 block content 
-
-    - const numArrays = Math.ceil(reviews.length / 10)
-    - var i = 0
-    h1='numArrays: ' + numArrays
+    div.review-list
+        h1 Reviews: 
+        ul
+            each review in reviews 
+                li.review=review.review + ' - ' + review.timestamp
 
     
-    ol
-        each val in reviews 
-            li
-                span=val.review + ' - ' + val.timestamp.toLocaleDateString() + ' ' + val.timestamp.toLocaleTimeString() + ' UTC'
+    div.pagination-buttons
+        if currentPage > 1
+            a(href=`/reviews?page=${currentPage - 1}`).prev-button Previous 
+        else 
+            p.prev-button Previous
+
+        if currentPage < totalPages
+            a(href=`/reviews?page=${currentPage + 1}`).next-button Next
+        else 
+            p.next-button Next
+
     br
-    hr
-    h2 Leave a Review!
-    form(method='POST' action='/reviews/send')
-        input(type='text', name ='review', id='review', required)
-        button(type='submit') Create Review
+    hr.saffron
+
+    div.review-form
+        h2 Leave a Review!
+        form(method='POST' action='/reviews/send')
+            input(type='text', name ='review', id='review', required)
+            button(type='submit') Create Review

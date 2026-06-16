@@ -50,14 +50,48 @@ router.get('/about', function(req, res, next){
 
 /*GET reviews page */
 router.get('/reviews', function(req, res, next){
+  const currentPage = parseInt(req.query.page) || 1;
+  const limit = 10;
+  const offset = (currentPage - 1) * limit;
+
   try{
-    req.db.query('SELECT * FROM reviews', (err, results) => {
-    if(err) {
-      console.error('Error fetching reviews:', err);
-      return res.status(500).send('Error fetching reviews');
-    }
-    res.render('reviews', {title: 'Reviews', reviews: results});
-    })
+    //Query for a count of every review in the table
+    req.db.query('SELECT COUNT(*) AS total FROM reviews', (err, countResults) => {
+      if(err) {
+        console.error('Error fetching reviews:', err);
+        return res.status(500).send('Error fetching reviews');
+      }
+
+      //Put total number of reviews and pages into variables to return
+      const totalReviews = countResults[0].total;
+      const totalPages = Math.ceil(totalReviews / limit) || 1;
+
+      //Grabs the next 10 reviews for the page
+      req.db.query('SELECT * FROM reviews ORDER BY timestamp DESC LIMIT ? OFFSET ? ',[limit, offset], (err, results) => {
+          if(err){
+            console.error('Error fetching reviews:',err);
+            return res.status(500).send('Error fetching reviews');
+          }
+          //Cleans up the reviews so timestamps are human readable
+          const formattedReviews = results.map(row => {
+              return {
+                ...row,
+                timestamp: row.timestamp.toLocaleDateString('en-US', {
+                  month: '2-digit',
+                  day: '2-digit',
+                  year: '2-digit',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  timeZoneName: 'short',
+                  timeZone: 'America/Denver'
+                })
+              };
+          });
+
+          res.render('reviews', {reviews: formattedReviews, totalPages: totalPages, currentPage: currentPage});
+      });
+
+    });
   } catch (error) {
     console.error('Error fetching reviews:', error);
     res.status(500).send('Error fetching reviews');
