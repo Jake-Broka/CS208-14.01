@@ -18,9 +18,7 @@ CREATE TABLE IF NOT EXISTS reviews (
     `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- ==========================================
 -- 1. SIGNATURE DONUTS (Single-price items)
--- ==========================================
 INSERT INTO menu (item, price_sm, price_md, price_lg, `description`, `type`) VALUES
 ('Classic Glazed', 2.50, NULL, NULL, 'Our legendary original light, fluffy, and perfectly glazed', 'donut'),
 ('Maple Bacon Bar', 3.75, NULL, NULL, 'Rich maple glaze topped with crispy applewood bacon', 'donut'),

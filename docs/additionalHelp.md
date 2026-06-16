@@ -51,10 +51,10 @@ Threads: 1  Questions: 90  Slow queries: 0  Opens: 33  Open tables: 26  Queries 
 Create the initial tables:
 
 ```bash
-sudo mysql -u root -p < ./setup_scripts/create_demo_table.sql
+sudo mysql -u root -p < ./setup_scripts/create_menu_reviews.sql
 ```
 
-Refer to the create_demo_table.sql file for details about the table and its fields.
+Refer to the create_menu_reviews.sql file for details about the table and its fields.
 
 
 Check to make sure the tables were created correctly
@@ -123,7 +123,7 @@ Threads: 1  Questions: 90  Slow queries: 0  Opens: 33  Open tables: 26  Queries 
 
 You can check if the demo database is created by running the following command
 in the MariaDB shell if you don't see a `cs208demo` database listed in the
-output of the command below, you can run the `create_demo_table.sql` script to
+output of the command below, you can run the `create_menu_reviews.sql` script to
 create it.
 
 ```bash
