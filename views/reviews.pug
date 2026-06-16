@@ -22,6 +22,8 @@ block content
     br
     hr.saffron
 
+    //- Function to prevent multiple submissions of the same review before refresh.
+    //- Returns T / F to the onsubmit event, locking the button until true
     script.  
         var wasSubmitted=false;
 
