@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS menu (
 
 CREATE TABLE IF NOT EXISTS reviews (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    review VARCHAR(255) NOT NULL,
+    review VARCHAR(500) NOT NULL,
     `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -33,9 +33,7 @@ INSERT INTO menu (item, price_sm, price_md, price_lg, `description`, `type`) VAL
 ('Dulce de Leche', 3.75, NULL, NULL, 'Caramel cream filled, drizzled with dulce de leche', 'donut'),
 ('PB & J', 3.75, NULL, NULL, 'Peanut butter glaze with raspberry jam filling', 'donut');
 
--- ==========================================
 -- 2. COFFEE & DRINKS (Multi-priced items)
--- ==========================================
 INSERT INTO menu (item, price_sm, price_md, price_lg, `description`, `type`) VALUES
 ('Drip Coffee', 2.25, 2.75, 3.25, 'House blend or single origin', 'coffee'),
 ('Cold Brew', 3.50, 4.00, 4.50, 'Slow-steeped 18 hours, smooth and bold', 'coffee'),
@@ -46,9 +44,7 @@ INSERT INTO menu (item, price_sm, price_md, price_lg, `description`, `type`) VAL
 ('Mocha', 4.75, 5.25, 5.75, 'Espresso, chocolate, steamed milk, whipped cream', 'coffee'),
 ('Vanilla Chai Latte', 4.50, 5.00, 5.50, 'Spiced chai with vanilla and steamed milk', 'coffee');
 
--- ==========================================
 -- 3. OTHER DRINKS (Single-price items)
--- ==========================================
 INSERT INTO menu (item, price_sm, price_md, price_lg, `description`, `type`) VALUES
 ('Fresh Squeezed OJ', 3.50, NULL, NULL, 'Fresh squeezed orange juice', 'drink'),
 ('Hot Chocolate', 3.75, NULL, NULL, 'Hot chocolate', 'drink'),
@@ -57,11 +53,30 @@ INSERT INTO menu (item, price_sm, price_md, price_lg, `description`, `type`) VAL
 ('Milk (Whole, Chocolate, Strawberry)', 2.00, NULL, NULL, 'Milk options', 'drink'),
 ('Apple Cider (Seasonal)', 3.50, NULL, NULL, 'Seasonal apple cider', 'drink');
 
--- ==========================================
 -- 4. BREAKFAST BITES (Single-price items)
--- ==========================================
 INSERT INTO menu (item, price_sm, price_md, price_lg, `description`, `type`) VALUES
 ('Egg & Cheese Croissant', 5.50, NULL, NULL, 'Egg & cheese breakfast croissant', 'breakfast'),
 ('Bacon Breakfast Sandwich', 6.25, NULL, NULL, 'Bacon breakfast sandwich', 'breakfast'),
 ('Avocado Toast', 5.75, NULL, NULL, 'Avocado toast', 'breakfast'),
 ('Yogurt Parfait', 4.50, NULL, NULL, 'Yogurt parfait', 'breakfast');
+
+--5. GENERIC REVIEWS
+INSERT INTO reviews (review) VALUES
+("I got food poisoning for weeks"),
+("Nice location"),
+("They should be open 24/7"),
+("No trees planted outside but we're in the city of trees"),
+("Put one near BSU!"),
+("Lorem ipsum dolor sit amet"),
+("I think therefore I am"),
+("To be or not to be"),
+("<h1>Hello, world!</h1>"),
+("10/10 would come again"),
+-- Page 1 ^^
+("If you're reading this, my pagination works!"),
+("Great donuts."),
+("Lovely staff"),
+("The classic glazed is my favorite!"),
+("Their sunday baker's dozen deal is amazing");
+-- Page 2 ^^
+

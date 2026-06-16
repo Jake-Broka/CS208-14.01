@@ -34,7 +34,7 @@ router.get('/menu/:item', function(req, res, next){
     if(results.length > 0){
       res.render('item', {title: results[0].item, details: results[0].description});
     } else {
-      res.status(404).render('error');
+      res.status(404).render('menu');
     }
     })
   } catch (error) {

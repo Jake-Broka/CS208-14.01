@@ -22,9 +22,20 @@ block content
     br
     hr.saffron
 
+    script.  
+        var wasSubmitted=false;
+
+        function checkBeforeSubmit(){
+            if(!wasSubmitted){
+                wasSubmitted = true;
+                return wasSubmitted
+            }
+            return false;
+        }
+
     div.review-form
         h2 Leave a Review!
-        form(method='POST' action='/reviews/send')
+        form(method='POST' action='/reviews/send' onsubmit="return checkBeforeSubmit()")
             label(for='review' style='display:block; margin-bottom:10px') Write your review: 
-            input(type='text', name ='review', id='review', required)
+            input(type='text', name ='review', id='review', required maxlength='500')
             button(type='submit') Create Review
